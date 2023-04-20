@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap");
+
+.arabic {
+  font-family: "Noto Naskh Arabic", serif !important;
+}
+
+.surah-card .stat-key {
+  font-weight: 500;
+  color: #74c69d;
+}
+
+.surah-card .stat-value {
+  font-weight: 500;
+}
