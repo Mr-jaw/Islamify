@@ -17,7 +17,6 @@ const SurahMetaGrid = () => {
   const filteredData = surahs.filter((surah) =>
     surah.name_simple.toLowerCase().includes(searchText.toLowerCase())
   );
-  console.log(filteredData);
 
   return (
     <>
