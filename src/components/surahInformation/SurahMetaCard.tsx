@@ -1,6 +1,6 @@
 import { Card, Stack, HStack, Heading, Text } from "@chakra-ui/react";
 
-export interface SurahInfo {
+interface SurahInfo {
   id: number;
   revelation_place: string;
   revelation_order: number;

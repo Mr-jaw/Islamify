@@ -1,4 +1,4 @@
-[
+export default [
   {
     juz_arabic: "\u0622\u0644\u0645",
     id: 1,

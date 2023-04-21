@@ -1,27 +1,25 @@
 import { Collapse, Heading, SimpleGrid } from "@chakra-ui/react";
-import surahs from "../../data/surahInfo";
-import SurahMetaCard from "./SurahMetaCard";
 import { useState } from "react";
+import juzs from "../../data/juzInfo";
 import GridLayoutForSearch from "../GridLayoutForSearch";
+import JuzMetaCard from "./JuzMetaCard";
 
-const SurahMetaGrid = () => {
+const JuzMetaGrid = () => {
   const [searchText, setSearchText] = useState("");
-
-  const filteredData = surahs.filter((surah) =>
-    surah.name_simple.toLowerCase().includes(searchText.toLowerCase())
+  console.log(searchText);
+  const filteredData = juzs.filter((juz) =>
+    juz.juz_name.toLowerCase().includes(searchText.toLowerCase())
   );
-
   return (
     <GridLayoutForSearch
       onSearchText={(searchText) => setSearchText(searchText)}
       filtered={filteredData}
-      placeHoder="Search Surah..."
+      placeHoder="Search Juz..."
     >
       <Collapse in={searchText ? true : false} animateOpacity>
         <Heading marginTop={5}>
           {filteredData.length > 0 ? filteredData.length : "No"}{" "}
-          {filteredData.length === 1 ? "Surah" : "Surahs"} Found For "
-          {searchText}"
+          {filteredData.length === 1 ? "Juz" : "Juzs"} Found For "{searchText}"
         </Heading>
       </Collapse>
       <SimpleGrid
@@ -30,12 +28,12 @@ const SurahMetaGrid = () => {
         marginTop={8}
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
       >
-        {filteredData.map((surah) => (
-          <SurahMetaCard key={surah.id} surah={surah} />
+        {filteredData.map((juz) => (
+          <JuzMetaCard key={juz.id} juz={juz} />
         ))}
       </SimpleGrid>
     </GridLayoutForSearch>
   );
 };
 
-export default SurahMetaGrid;
+export default JuzMetaGrid;
