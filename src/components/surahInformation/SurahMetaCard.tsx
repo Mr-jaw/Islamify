@@ -5,6 +5,7 @@ export interface SurahInfo {
   revelation_place: string;
   revelation_order: number;
   bismillah_pre: boolean;
+  number_rukus: number;
   name_complex: string;
   name_arabic: string;
   verses_count: number;
@@ -21,7 +22,7 @@ const SurahMetaCard = ({ surah }: Props) => {
   return (
     <Card className="surah-card" padding={2} paddingX={5}>
       <Stack
-        style={{ borderBottom: ".1em solid #95d5b2" }}
+        style={{ borderBottom: ".15em solid #95d5b2" }}
         className="surah-heading"
         paddingBottom={4}
       >
@@ -56,6 +57,10 @@ const SurahMetaCard = ({ surah }: Props) => {
         <HStack justifyContent={"space-between"}>
           <Text className="stat-key">Verse Count</Text>
           <Text className="stat-value">{surah.verses_count}</Text>
+        </HStack>
+        <HStack justifyContent={"space-between"}>
+          <Text className="stat-key">Rukus Count</Text>
+          <Text className="stat-value">{surah.number_rukus}</Text>
         </HStack>
         <HStack justifyContent={"space-between"}>
           <Text className="stat-key">Page Count</Text>
