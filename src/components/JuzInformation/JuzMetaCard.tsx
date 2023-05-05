@@ -19,7 +19,7 @@ interface Props {
 
 const JuzMetaCard = ({ juz }: Props) => {
   return (
-    <Card className="surah-card" padding={2} paddingX={5}>
+    <Card className="stat-card" padding={2} paddingX={5}>
       <Stack
         style={{ borderBottom: ".15em solid #95d5b2" }}
         className="surah-heading"

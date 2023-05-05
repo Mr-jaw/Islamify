@@ -1,4 +1,4 @@
-import { Button, Card, HStack, Heading, Switch, Text } from "@chakra-ui/react";
+import { Collapse, Fade, HStack, Switch, Text } from "@chakra-ui/react";
 import "./App.css";
 import SurahMetaGrid from "./components/surahInformation/SurahMetaGrid";
 import JuzMetaGrid from "./components/JuzInformation/JuzMetaGrid";
@@ -6,6 +6,8 @@ import { useState } from "react";
 
 function App() {
   const [toggle, setToggle] = useState(false);
+  const pin = 1236;
+  const pin1 = "1236";
   return (
     <>
       <HStack justifyContent={"center"} marginBottom={4}>
@@ -17,8 +19,12 @@ function App() {
         />
         <Text fontWeight={"bold"}>Surah</Text>
       </HStack>
-
-      {toggle ? <SurahMetaGrid /> : <JuzMetaGrid />}
+      <Collapse in={toggle}>
+        <SurahMetaGrid />
+      </Collapse>
+      <Collapse in={!toggle}>
+        <JuzMetaGrid />
+      </Collapse>
     </>
   );
 }
